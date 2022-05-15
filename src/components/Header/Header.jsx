@@ -2,7 +2,7 @@ import './Header.scss';
 import { Link } from 'react-router-dom';
 import { menuItems, manager } from '../../services/constans';
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function Menu() {
   const menu = menuItems.map( item => {
@@ -31,8 +31,27 @@ function Menu() {
 
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(true);
-  const onMenuClick = () => setMenuOpen(!menuOpen);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+  const onMenuClick = () => {
+    setMenuOpen(!menuOpen)
+  };
+
+  const resizeHandler = () => {
+    const windowWidth = window.innerWidth;
+    setWindowSize(windowWidth);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", resizeHandler);
+    resizeHandler();
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
+  }, []);
+
+
   return (
     <>
     <header>
@@ -48,7 +67,7 @@ function Header() {
       </ul>
     </div>
     </header>
-    {menuOpen ? <Menu /> : ''}
+    { menuOpen || windowSize >= 1024 ? <Menu /> : ''}
   </>
   )
 }
