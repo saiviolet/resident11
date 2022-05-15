@@ -1,0 +1,54 @@
+@import 'variables.scss';
+
+.indented-block {
+  max-width: calc(100% - 70px);
+  margin: 0 auto;
+
+  @media (min-width: $width-s) {
+    max-width: calc(100% - 120px);
+  }
+
+  @media (min-width: $width-m) {
+    max-width: calc(100% - 220px);
+  }
+
+  @media (min-width: $width-l) {
+    max-width: calc(100% - 312px);
+  }
+
+}
+
+.icon {
+  width: 16.5px;
+  height: 16.5px;
+  background-size: cover;
+  background-position:center;
+  background-repeat: no-repeat;
+
+    @media (min-width: $width-s) {
+      width: 19.12px;
+      height: 19.12px;
+    }
+
+    &_style_inst {
+      background-image: url(../images/icons/icon_insta.svg);
+    }
+    &_style_facebook {
+      background-image: url(../images/icons/icon_facebook.svg);
+    }
+    &_style_phone {
+      background-image: url(../images/icons/icon_phone.svg);
+    }
+    &_style_menu {
+      background-image: url(../images/icons/icon_menu.svg);
+      width: 27px;
+      height: 17.5px;
+
+      @media (min-width: $width-m) {
+        display: none;
+      }
+
+    }
+
+
+}

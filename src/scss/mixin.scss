@@ -1,0 +1,113 @@
+@import 'variables.scss';
+//h1
+@mixin main-title {
+  font: {
+    family: $main-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 100%;
+    text-align: center;
+  }
+  color: $primary_color_text;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $width-xl) {
+    font-size: 64px;
+    line-height: 90%;
+    }
+}
+//h2
+@mixin title {
+  font: {
+    family: $main-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 90%;
+    text-align: center;
+  }
+  color: $primary_color_text;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $width-xl) {
+    font-size: 64px;
+    line-height: 90%;
+    }
+}
+
+//h3
+@mixin subtitle {
+  font: {
+    family: $main-font;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0.1px;
+  }
+  color: $primary_color_text;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $width-xl) {
+    font-size: 22px;
+    }
+}
+//bold in list
+@mixin bold {
+  font: {
+    family: $main-font;
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  color: $primary_color;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $width-xl) {
+    font-size: 18px;
+    }
+}
+//button text
+@mixin button-text {
+  font: {
+    family: $main-font;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 9%;
+  }
+  color: $color_light_grey;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $width-xl) {
+    font-size: 18px;
+    }
+}
+//flex
+@mixin flex($align: center, $justify: center, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+//standart button
+@mixin button {
+  @include flex;
+
+  border: $primary_color solid 1px;
+  border-radius: 30px;
+
+  width: 100%;
+  max-width: 316px;
+  min-height: 63px;
+
+  @media (min-width: $width-xl) {
+    max-width: 360px;
+    }
+}
