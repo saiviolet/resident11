@@ -14,16 +14,16 @@ function Menu() {
   });
 
   return (
-    <nav className="header__navbar indented-block">
+    <nav className="navbar indented-block">
         <ul>
           {menu}
         </ul>
-        <div className="header__navbar-menu-icon">
+        <div className="navbar__menu-icon">
           <div className="icon icon_style_inst"></div>
           <div className="icon icon_style_facebook"></div>
         </div>
-        <p className="header__navbar-menu-title">Ваш персональный помощник в покупке участка: </p>
-        <span className="header__navbar-menu-subtitle">{manager}</span>
+        <p className="navbar__menu-title">Ваш персональный помощник в покупке участка: </p>
+        <span className="navbar__menu-subtitle">{manager}</span>
       </nav>
   )
 }
@@ -34,6 +34,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(true);
   const onMenuClick = () => setMenuOpen(!menuOpen);
   return (
+    <>
     <header>
     <div className="header indented-block">
       <ul className="header__desktop-icons">
@@ -46,10 +47,9 @@ function Header() {
         <li className="icon icon_style_menu" onClick={onMenuClick}></li>
       </ul>
     </div>
-    {menuOpen ? <Menu /> : ''}
-
-  
     </header>
+    {menuOpen ? <Menu /> : ''}
+  </>
   )
 }
 
