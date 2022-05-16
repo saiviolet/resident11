@@ -2,13 +2,13 @@ import './Header.scss';
 import { Link } from 'react-router-dom';
 import { menuItems, manager } from '../../services/constans';
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 function Menu() {
-  const menu = menuItems.map( item => {
+  const menu = menuItems.map( ({name, link, id}) => {
     return (
-      <li>
-      <Link to={item.link} >{item.name}</Link>
+      <li key={id}>
+      <Link to={link}>{name}</Link>
     </li>
     )
   });
