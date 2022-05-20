@@ -29,7 +29,10 @@ function Intro() {
   return (
     <section className="intro indented-block">
       <VideoIntro />
-      <Title main>Проверочка</Title>
+      <div className="intro__info-block">
+        <Title main>Жилой район в Виймси</Title>
+        <p className="intro__info-block-text">Одиннадцать приватных участков с собственным лесом</p>
+      </div>
     </section>
   )
 }

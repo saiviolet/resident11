@@ -12,11 +12,23 @@
 
   &__video {
     overflow: hidden;
-    
   }
 
   &__mask-image {
     clip-path: url(#intro_mask);
+  }
+
+  &__info-block {
+    @include flex(center, space-between, column);
+  }
+
+  &__info-block-text {
+    color: $primary_color_text;
+    font-family: $main-font;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: center;
   }
   
 }
