@@ -1,6 +1,6 @@
 import './Header.scss';
 import { Link } from 'react-router-dom';
-import { menuItems, manager } from '../../services/constans';
+import { menuItems, manager, mediaWidth} from '../../services/constans';
 
 import React, { useEffect, useState } from 'react';
 
@@ -67,7 +67,7 @@ function Header() {
       </ul>
     </div>
     </header>
-    { menuOpen || windowSize >= 1024 ? <Menu /> : ''}
+    { menuOpen || windowSize >= mediaWidth.m ? <Menu /> : ''}
   </>
   )
 }

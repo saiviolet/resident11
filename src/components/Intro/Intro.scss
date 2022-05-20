@@ -1,3 +1,22 @@
 @import 'variables.scss';
 @import 'mixin.scss';
 @import 'main.scss';
+
+.intro {
+  height: 100%;
+  max-height: 277px;
+
+  @media (min-width: $width-m) {
+    max-height: 701px;
+  }
+
+  &__video {
+    overflow: hidden;
+    
+  }
+
+  &__mask-image {
+    clip-path: url(#intro_mask);
+  }
+  
+}

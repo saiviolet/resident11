@@ -5,13 +5,17 @@ import '../../fonts/fonts.scss';
 import { Routes, Route } from "react-router-dom";
 //компоненты
 import Header from '../Header/Header.jsx';
-
+import Intro from '../Intro/Intro';
 
 function App() {
   return (
-    <Routes>
+    <>
+    {/* <Routes>
       <Route path="/" element={<Header/> } />
-    </Routes>
+    </Routes> */}
+    <Header />
+    <Intro />
+    </>
   );
 }
 

@@ -11,4 +11,12 @@ const menuItems = [
 ]
 const manager = 'Svetlana Davidovski';
 
-export { menuItems, manager }
+ const mediaWidth = {
+   xs: 460,
+   s: 768,
+   m: 1024,
+   l: 1300,
+   xl: 1512,
+ }
+
+export { menuItems, manager, mediaWidth }

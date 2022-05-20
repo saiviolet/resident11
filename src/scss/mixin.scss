@@ -1,41 +1,48 @@
 @import 'variables.scss';
 //h1
-@mixin main-title {
-  font: {
-    family: $main-font;
-    font-style: normal;
+// @mixin main-title {
+//   font: {
+//     family: $main-font;
+//     font-style: normal;
+//     font-weight: 300;
+//     font-size: 36px;
+//     line-height: 100%;
+//     text-align: center;
+//   }
+//   color: $primary_color_text;
+//   margin: 0;
+//   padding: 0;
+
+//   @media (min-width: $width-xl) {
+//     font-size: 64px;
+//     line-height: 90%;
+//     }
+// }
+//h2
+@mixin title($prop){
+  margin: 0;
+  padding: 0;
+  font-family: $main-font;
+  font-style: normal;
+  color: $primary_color_text;
+
+  @media (min-width: $width-xl) {
+    font-size: 64px;
+    line-height: 90%;
+    }
+
+  @if($prop == 'secondary') {
+    font-weight: 400;
+    font-size: 36px;
+    font-height: 90%;
+  }
+
+  @if($prop == 'main') {
     font-weight: 300;
     font-size: 36px;
     line-height: 100%;
-    text-align: center;
   }
-  color: $primary_color_text;
-  margin: 0;
-  padding: 0;
 
-  @media (min-width: $width-xl) {
-    font-size: 64px;
-    line-height: 90%;
-    }
-}
-//h2
-@mixin title {
-  font: {
-    family: $main-font;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 90%;
-    text-align: center;
-  }
-  color: $primary_color_text;
-  margin: 0;
-  padding: 0;
-
-  @media (min-width: $width-xl) {
-    font-size: 64px;
-    line-height: 90%;
-    }
 }
 
 //h3
