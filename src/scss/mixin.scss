@@ -6,7 +6,6 @@
   font-family: $main-font;
   font-style: normal;
   color: $primary_color_text;
-  text-align: center;
 
   @media (min-width: $width-xl) {
     font-size: 64px;
@@ -63,19 +62,13 @@
 }
 //button text
 @mixin button-text {
-  font: {
-    family: $main-font;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 9%;
-  }
+  box-sizing: border-box;
+  font-family: $main-font;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 9%;
   color: $color_light_grey;
-  margin: 0;
-  padding: 0;
-
-  @media (min-width: $width-xl) {
-    font-size: 18px;
-    }
+  text-decoration: none;
 }
 //flex
 @mixin flex($align: center, $justify: center, $direction: row) {
@@ -88,15 +81,9 @@
 //standart button
 @mixin button {
   @include flex;
-
+  position: relative;
+  overflow: hidden;
   border: $primary_color solid 1px;
-  border-radius: 30px;
-
-  width: 100%;
-  max-width: 316px;
-  min-height: 63px;
-
-  @media (min-width: $width-xl) {
-    max-width: 360px;
-    }
+  padding: 25px 40px;
+  border-radius: 50px;
 }

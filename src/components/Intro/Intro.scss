@@ -4,22 +4,51 @@
 
 .intro {
   height: 100%;
-  max-height: 277px;
+  width: 100%;
+  overflow: hidden;
+  min-height: 731px;
+  @include flex(center, center, column);
 
   @media (min-width: $width-m) {
     max-height: 701px;
+    flex-direction: row;
   }
 
   &__video {
-    overflow: hidden;
+    @include flex(center, center, column);
+
+    @media (min-width: $width-m) {
+      margin-right: 76px; 
+    }
+
   }
 
   &__mask-image {
     clip-path: url(#intro_mask);
+    width: 200px;
+    height: 190px;
+    object-fit: cover;
+    object-position: center center;
+
+    @media (min-width: $width-m) {
+      height: 420px;
+      width: 440px;
+      clip-path: url(#intro_mask_big);
+    }
+
   }
 
   &__info-block {
+    margin-top: 66px;
     @include flex(center, space-between, column);
+    width: 100%;
+    min-height: 248px;
+
+    @media (min-width: $width-m) {
+      flex-basis: 674px;
+      align-items: flex-start;
+    }
+
   }
 
   &__info-block-text {
