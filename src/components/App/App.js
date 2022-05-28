@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 //компоненты
 import Header from '../Header/Header.jsx';
 import Intro from '../Intro/Intro';
+import Areas from '../Areas/Areas';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
     </Routes> */}
     <Header />
     <Intro />
+    <Areas />
     </>
   );
 }

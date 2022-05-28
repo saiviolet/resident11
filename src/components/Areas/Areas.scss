@@ -1,0 +1,39 @@
+@import 'mixin.scss';
+@import 'variables.scss';
+
+.areas {
+  box-sizing: border-box;
+  min-height: 1160px;
+
+  @media (min-width: $width-m) {
+    min-height: 681px;
+  }
+
+  &__info-block {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    min-height: 1116px;
+    background-image: url(../../images/158.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+    @media (min-width: $width-m) {
+      min-height: 1992px;
+    }
+  }
+
+  &__plan {
+
+    position: absolute;
+    left: 30.5%;
+    top: 60.96%;
+    background-color: transparent;
+    width: 41.13%;
+    height: 36.09%;
+    min-height: 366px;
+    min-width: 317px;
+  }
+
+}
