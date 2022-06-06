@@ -1,0 +1,66 @@
+@import 'mixin.scss';
+@import 'variables.scss';
+
+.house {
+  min-height: 661px;
+
+  @media (min-width: $width-m) {
+    min-height: 982px;
+  }
+
+  &__title {
+    padding-top: 56px;
+    max-width: 320px;
+
+    @media (min-width: $width-m) {
+      padding-top: 193px;
+      max-width: 541px;
+    }
+
+  }
+
+  &__image-block {
+    margin-top: 57px;
+    min-height: 423px;
+    max-width: 320px;
+    @include flex(center, space-between, column);
+
+    @media (min-width: $width-m) {
+      flex-direction: row;
+      margin-top: 85px;
+      max-width: 1196px;
+      min-height: 367px;
+    }
+  }
+
+  &__image {
+    margin: 0;
+    width: 100%;
+    min-width: 320px;
+    min-height: 235px;
+    border-radius: 15px;
+
+    @media (min-width: $width-m) {
+      max-width: 729px;
+      max-height: 367px;
+    }
+
+  }
+
+  &__list {
+    margin: 0;
+    list-style-type: circle;
+  }
+
+  &__list-item {
+    padding: 0;
+    margin: 0;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 120%;
+    color: $primary_color_text;
+  }
+
+}

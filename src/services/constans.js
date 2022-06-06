@@ -2,6 +2,7 @@ import { nanoid } from 'nanoid';
 import wood from '../images/icons/icon_wood.svg';
 import sea from '../images/icons/icon_sea.svg';
 import air from '../images/icons/icon_air.svg';
+import house from '../images/house.jpg';
 
 const menuItems = [
   { name: 'Участки', link: '#', id: nanoid(10)},
@@ -31,4 +32,4 @@ const manager = 'Svetlana Davidovski';
 
 
 
-export { menuItems, manager, mediaWidth, benefits }
+export { menuItems, manager, mediaWidth, benefits, house }

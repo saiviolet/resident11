@@ -2,6 +2,7 @@ import React from 'react'
 
 import './Areas.scss'
 import { benefits } from '../../services/constans';
+import Title from '../ui/Title/Title';
 
 export function BlockTextWithIcon({title, text, icon}) {
 
@@ -63,7 +64,7 @@ function Areas() {
     <section className="areas">
       <div className="areas__info-block ">
         <div className="areas__text-block indented-block">
-          <span className="areas__title">Üksteist это </span>
+        <Title className="areas__title">Üksteist это:</Title>
           <div className="areas__blocks">
             {benefits.map( block => <BlockTextWithIcon icon={block.image} title={block.title} text={block.text} />) }
           </div>

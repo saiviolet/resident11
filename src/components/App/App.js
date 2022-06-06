@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from '../Header/Header.jsx';
 import Intro from '../Intro/Intro';
 import Areas from '../Areas/Areas';
+import House from '../House/House';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
     <Header />
     <Intro />
     <Areas />
+    <House />
     </>
   );
 }
