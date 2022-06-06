@@ -14,7 +14,8 @@ function Menu() {
   });
 
   return (
-    <nav className="navbar indented-block">
+    <nav className="navbar">
+        {/* <className="navbar indented-block"> */}
         <ul>
           {menu}
         </ul>

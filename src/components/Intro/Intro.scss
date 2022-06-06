@@ -10,7 +10,7 @@
   @include flex(center, center, column);
 
   @media (min-width: $width-m) {
-    max-height: 701px;
+    min-height: 701px;
     flex-direction: row;
   }
 
