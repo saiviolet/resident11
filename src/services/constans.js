@@ -1,4 +1,7 @@
 import { nanoid } from 'nanoid';
+import wood from '../images/icons/icon_wood.svg';
+import sea from '../images/icons/icon_sea.svg';
+import air from '../images/icons/icon_air.svg';
 
 const menuItems = [
   { name: 'Участки', link: '#', id: nanoid(10)},
@@ -8,7 +11,14 @@ const menuItems = [
   { name: 'Команда', link: '#', id: nanoid(10)},
   { name: 'Документы', link: '#', id: nanoid(10)},
   { name: 'Прогулка', link: '#', id: nanoid(10)},
-]
+];
+
+const benefits = [
+  {image: wood, title: 'Лес', text: 'Жизнь в окружении леса'},
+  {image: sea, title: 'Море', text: 'В 311 метрах от дома ваше море'},
+  {image: air, title: 'Воздух', text: 'Вдыхайте морской и хвойный воздух'},
+];
+
 const manager = 'Svetlana Davidovski';
 
  const mediaWidth = {
@@ -19,4 +29,6 @@ const manager = 'Svetlana Davidovski';
    xl: 1512,
  }
 
-export { menuItems, manager, mediaWidth }
+
+
+export { menuItems, manager, mediaWidth, benefits }
