@@ -10,6 +10,7 @@ import Areas from '../Areas/Areas';
 import House from '../House/House';
 import Origins from '../Origins/Origins';
 import History from '../History/History';
+import SliderButton from '../ui/SliderButton/SliderButton';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
     <House />
     <Origins />
     <History />
+    <SliderButton />
     </>
   );
 }

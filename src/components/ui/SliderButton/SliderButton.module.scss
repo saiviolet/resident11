@@ -1,0 +1,29 @@
+@import 'mixin.scss';
+@import 'variables.scss';
+
+.navButton {
+  @include flex(center, center);
+  position: relative;
+  width: 36.4px;
+  height: 36.4px;
+  background-color: transparent;
+
+  border: 1px solid $brand_color;
+  border-radius: 50%;
+
+  &::after {
+    position: absolute;
+    content: '';
+    border: solid $brand_color;
+    padding: 5px;
+    margin-right: 3px;
+    border-width: 0 1px 1px 0;
+    transform: rotate(-45deg);
+  }
+
+  &[data-side]::after {
+    transform: rotate(135deg);
+    margin-right: 0;
+    margin-left: 3px;
+  }
+}
