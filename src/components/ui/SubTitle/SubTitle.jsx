@@ -1,8 +1,8 @@
 import React from 'react'
-import './SubTitle.scss';
+import styles from './SubTitle.module.scss';
 
-function SubTitle({children}) {
-  return <h2 className="subtitle">{children}</h2>
+function SubTitle({children, className}) {
+  return <h3 className={styles.subtitle + " " + className}>{children}</h3>
 }
 
 export default SubTitle

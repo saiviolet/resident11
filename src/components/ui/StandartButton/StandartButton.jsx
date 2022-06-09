@@ -1,9 +1,9 @@
 import React from 'react';
-import './StandartButton.scss';
+import styles from './StandartButton.module.scss';
 
-function StandartButton({children, link}) {
+function StandartButton({children, link, className}) {
   return (
-  <a className="button" href={link} data-text={children}>{children}</a>
+  <a className={styles.button + " " + className} href={link} data-text={children}>{children}</a>
   )
 }
 

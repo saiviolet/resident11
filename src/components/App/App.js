@@ -9,6 +9,7 @@ import Intro from '../Intro/Intro';
 import Areas from '../Areas/Areas';
 import House from '../House/House';
 import Origins from '../Origins/Origins';
+import History from '../History/History';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
     <Areas />
     <House />
     <Origins />
+    <History />
     </>
   );
 }

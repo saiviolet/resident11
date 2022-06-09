@@ -4,7 +4,8 @@
 .button {
   @include button;
   border-color: $primary_color_text;
-  min-height: 63px;
+  // min-height: 63px;
+  height: 63px;
   @include button-text;
   color: $primary_color_text;
   text-decoration: none;
