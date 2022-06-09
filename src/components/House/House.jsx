@@ -6,7 +6,7 @@ import Title from '../ui/Title/Title';
 function House() {
 
   return (
-    <div className='house indented-block'>
+    <section className='house indented-block'>
       <Title className="house__title">Место для вашего дома:</Title>
       <div className="house__image-block">
         <img src={house} alt="фото места для вашего дома" className="house__image"/>
@@ -18,7 +18,7 @@ function House() {
           <li className="house__list-item">В 311 метрах от моря</li>
         </ul>
       </div>
-    </div>
+    </section>
   )
 }
 

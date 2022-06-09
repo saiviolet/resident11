@@ -8,6 +8,7 @@ import Header from '../Header/Header.jsx';
 import Intro from '../Intro/Intro';
 import Areas from '../Areas/Areas';
 import House from '../House/House';
+import Origins from '../Origins/Origins';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
     <Intro />
     <Areas />
     <House />
+    <Origins />
     </>
   );
 }
