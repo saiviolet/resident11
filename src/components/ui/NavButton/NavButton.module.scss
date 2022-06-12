@@ -10,6 +10,7 @@
 
   border: 1px solid $brand_color;
   border-radius: 50%;
+  cursor: pointer;
 
   &::after {
     position: absolute;
@@ -19,11 +20,21 @@
     margin-right: 3px;
     border-width: 0 1px 1px 0;
     transform: rotate(-45deg);
+    transition: all 0.5s ease, color 0.3s ease;
   }
 
-  &[data-side]::after {
+  &[data-prev]::after {
     transform: rotate(135deg);
     margin-right: 0;
     margin-left: 3px;
   }
+
+  &:hover {
+    @include animateButton;
+  }
+
+  &:hover::after {
+    border-color: $primary_color;
+  }
+
 }

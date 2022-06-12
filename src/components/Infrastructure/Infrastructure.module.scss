@@ -1,0 +1,11 @@
+@import 'mixin.scss';
+@import 'variables.scss';
+
+.infrastructure {
+  min-height: 844px;
+
+  @media (min-width: $width-m) {
+    min-height: 982px;
+  }
+  
+}

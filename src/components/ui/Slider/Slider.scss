@@ -1,0 +1,65 @@
+@import 'mixin.scss';
+@import 'variables.scss';
+
+.swiper {
+  width: 100%;
+  max-height: 695px;
+  border-radius: 15px;
+
+  &-wrapper {
+    max-height: 344px;
+    padding-inline-start: 0;
+    border-radius: 15px;
+  }
+
+  &-slide {
+    min-height: 344px;
+    min-width: 320px;
+  
+    border-radius: 15px;
+    list-style-type: none;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  &-pagination {
+    background-color: transparent;
+  }
+
+  &-pagination-list {
+    // width: 100%;
+    @include flex(center, flex-start, row);
+    flex-wrap: wrap;
+    list-style-type: none;
+    min-height: 152px;
+  }
+
+  &-pagination-bullet{
+    width: auto;
+    height: auto;
+    opacity: 100%;
+    background: transparent;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+    color: $primary_color_text;
+  }
+
+  &-pagination-bullet-active {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0.1px;
+    color: $brand_color;
+  }
+
+  &-nav-buttons {
+    @include flex(center, space-between, row);
+    max-width: 104px;
+  }
+
+}

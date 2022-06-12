@@ -12,9 +12,6 @@
   transition: background 0.5s ease, color 0.3s ease;
 
   &:hover {
-    color: $primary_color;
-    background-color: $brand_color;
-    border-color: $brand_color;
-    transition: background 0.5s ease, color 0.3s ease;
+    @include animateButton;
   }
 }
