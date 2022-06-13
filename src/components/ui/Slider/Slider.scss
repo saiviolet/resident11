@@ -22,12 +22,18 @@
     object-position: center center;
   }
 
-  &-pagination {
+  &-image-detail {
     background-color: transparent;
+  }
+
+  &-pagination {
+    background-color: inherit;
+    min-height: 323px;
   }
 
   &-pagination-list {
     // width: 100%;
+    max-width: 310px;
     @include flex(center, flex-start, row);
     flex-wrap: wrap;
     list-style-type: none;

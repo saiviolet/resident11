@@ -6,7 +6,6 @@ import style from './NavButton.module.scss';
 function NavButton({link, side}) {
   const slider = useSwiper();
   const SlideNext = () => {
-    console.log(slider.pagination);
     slider.slideNext();
   }
   const SlidePrev = () => {
