@@ -18,6 +18,7 @@ function Slider() {
     title: '',
     text: ''
   });
+  const [slider, setSlider] = useState();
   //пагинация/слайдер
   SwiperCore.use([Navigation, Pagination]);
   const paginationBlock = '.swiper-pagination-list';
@@ -32,7 +33,7 @@ function Slider() {
     "renderBullet": function (index) {
       return '<li class="' + paginationClass + '">' + (slides[index].title) + '</;>';
     }
-  }
+  };
   //слайды
   const swiperSlides = slides.map((slide, index) => {
     return <SwiperSlide key={slide.id} tag="li">
@@ -46,29 +47,32 @@ function Slider() {
       title: slides[index].title,
       text: slides[index].text,
     });
-  }
+  };
   return (
     <>
+          <ul className="swiper-pagination-list" slot="container-start"></ul>
+          <div className="swiper-infoblock" slot="container-start">
+        <h2 className="swiper-infoblock-title">{info.title}</h2>
+        <p className="swiper-infoblock-text">{info.text}</p>
+        <div className="swiper-nav-buttons">
+          <NavButton side="prev" slider={slider}/>
+          <NavButton side="next" slider={slider}/>
+        </div>
+      </div>
     <Swiper 
+      slidesPerView={1}
       id="infrastructure" 
       tag="div"
       wrapperTag="ul"
       pagination={pagination}
       onSlideChange={slider => swiperHandler(slider.snapIndex)}
-      onInit={slider => swiperHandler(slider.snapIndex)}
-      >
+      onInit={slider => {
+        setSlider(slider);
+        swiperHandler(slider.snapIndex)
+        }
+      }
+    >
       {swiperSlides}
-      <ul className="swiper-pagination-list" slot="container-start"></ul>
-      <div className="swiper-infoblock" slot="container-start">
-        <h2 className="swiper-infoblock-title">{info.title}</h2>
-        <p className="swiper-infoblock-text">{info.text}</p>
-        <div className="swiper-nav-buttons">
-          <NavButton side="prev"/>
-          <NavButton side="next" />
-        </div>
-      </div>
-
-
     </Swiper>
     </>
   )

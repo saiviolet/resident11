@@ -1,10 +1,9 @@
 import React from 'react';
 import { useSwiper, useSwiperSlide} from 'swiper/react';
 
-import style from './NavButton.module.scss';
+import './NavButton.scss';
 
-function NavButton({link, side}) {
-  const slider = useSwiper();
+function NavButton({link, side, slider}) {
   const SlideNext = () => {
     slider.slideNext();
   }
@@ -15,8 +14,8 @@ function NavButton({link, side}) {
 
 
   const button = side === 'next' 
-  ? ( <button className={style.navButton} data-next onClick={SlideNext}></button> ) 
-  : ( <button className={style.navButton} data-prev onClick={SlidePrev}></button> );
+  ? ( <button className="navButton" data-next onClick={SlideNext}></button> ) 
+  : ( <button className="navButton" data-prev onClick={SlidePrev}></button> );
 
   return button;
 

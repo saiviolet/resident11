@@ -2,14 +2,25 @@
 @import 'variables.scss';
 
 .swiper {
+  margin: 0;
   width: 100%;
   max-height: 695px;
-  border-radius: 15px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 'image textinfo';
 
   &-wrapper {
+    margin: 0;
     max-height: 344px;
     padding-inline-start: 0;
     border-radius: 15px;
+    grid-area: image;
+
+    @media (min-width: $width-m) {
+      max-height: 448px;
+      max-width: 788px !important;
+    }
+
   }
 
   &-slide {
@@ -20,10 +31,12 @@
     list-style-type: none;
     object-fit: cover;
     object-position: center center;
-  }
 
-  &-image-detail {
-    background-color: transparent;
+    @media (min-width: $width-m) {
+      max-height: 448px;
+      max-width: 788px !important;
+    }
+
   }
 
   &-pagination {
@@ -32,15 +45,23 @@
   }
 
   &-pagination-list {
+    grid-area: pagination;
     // width: 100%;
     max-width: 310px;
     @include flex(center, flex-start, row);
     flex-wrap: wrap;
     list-style-type: none;
     min-height: 152px;
+
+    @media (min-width: $width-m) {
+      max-width: 1200px;
+      min-height: 67px;
+    }
+
   }
 
   &-pagination-bullet{
+    margin: 0 18px 0 0;
     width: auto;
     height: auto;
     opacity: 100%;
@@ -51,6 +72,17 @@
     font-size: 14px;
     line-height: 120%;
     color: $primary_color_text;
+
+
+    @media (min-width: $width-m) {
+      font-size: 20px;
+      margin: 0 30px 0 0;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+
   }
 
   &-pagination-bullet-active {
@@ -61,11 +93,67 @@
     line-height: 120%;
     letter-spacing: 0.1px;
     color: $brand_color;
+
+    @media (min-width: $width-m) {
+      font-size: 20px;
+    }
+
   }
 
   &-nav-buttons {
-    @include flex(center, space-between, row);
-    max-width: 104px;
+    margin: 0;
+    @include flex(flex-start, space-between, row);
+    min-width: 104px;
+  }
+
+  &-infoblock {
+    // align-self: flex-start;
+    margin: 0;
+    min-height: 117px;
+    @include flex(flex-start, space-between, column);
+    margin-bottom: 27px;
+    grid-area: textinfo;
+
+    &-title {
+      margin: 0;
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 120%;
+      color: $primary_color_text;
+
+      @media (min-width: $width-m) {
+        font-size: 24px;
+      }
+
+    }
+
+    &-text {
+      margin: 0;
+      // margin: 10px 0 18px 0;
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 120%;
+      color: $primary_color_text;
+
+      @media (min-width: $width-m) {
+        font-size: 18px;
+      }
+
+    }
+
+    @media (min-width: $width-m) {
+      min-height: 136px;
+      max-width: 472px;
+    }
+
+  }
+
+  @media (min-width: $width-m) {
+    max-width: 788px;
   }
 
 }
