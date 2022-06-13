@@ -50,31 +50,32 @@ function Slider() {
   };
   return (
     <>
-          <ul className="swiper-pagination-list" slot="container-start"></ul>
-          <div className="swiper-infoblock" slot="container-start">
-        <h2 className="swiper-infoblock-title">{info.title}</h2>
-        <p className="swiper-infoblock-text">{info.text}</p>
-        <div className="swiper-nav-buttons">
-          <NavButton side="prev" slider={slider}/>
-          <NavButton side="next" slider={slider}/>
+      <ul className="swiper-pagination-list" slot="container-start"></ul>
+      <div className="slider-wrapper">
+        <div className="swiper-infoblock" slot="container-start">
+          <h2 className="swiper-infoblock-title">{info.title}</h2>
+          <p className="swiper-infoblock-text">{info.text}</p>
+          <div className="swiper-nav-buttons">
+            <NavButton side="prev" slider={slider}/>
+            <NavButton side="next" slider={slider}/>
+          </div>
         </div>
+        <Swiper 
+          id="infrastructure" 
+          tag="div"
+          wrapperTag="ul"
+          pagination={pagination}
+          onSlideChange={slider => swiperHandler(slider.snapIndex)}
+          onInit={slider => {
+            setSlider(slider);
+            swiperHandler(slider.snapIndex)
+            }
+          }
+        > 
+          {swiperSlides}
+        </Swiper>
       </div>
-    <Swiper 
-      slidesPerView={1}
-      id="infrastructure" 
-      tag="div"
-      wrapperTag="ul"
-      pagination={pagination}
-      onSlideChange={slider => swiperHandler(slider.snapIndex)}
-      onInit={slider => {
-        setSlider(slider);
-        swiperHandler(slider.snapIndex)
-        }
-      }
-    >
-      {swiperSlides}
-    </Swiper>
-    </>
+  </>
   )
 }
 

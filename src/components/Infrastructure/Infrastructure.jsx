@@ -8,7 +8,10 @@ function Infrastructure() {
   return (
     <section className={style.infrastructure + " indented-block"}>
       <Title className={style.infrastructure__title}>Инфраструктура:</Title>
-      <Slider />
+      <div className={style.infrastructure__slider}>
+        <Slider />
+      </div>
+
     </section>
   )
 }

@@ -5,16 +5,14 @@
   margin: 0;
   width: 100%;
   max-height: 695px;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: 'image textinfo';
+  display: flex;
+  border-radius: 15px;
 
   &-wrapper {
     margin: 0;
     max-height: 344px;
     padding-inline-start: 0;
     border-radius: 15px;
-    grid-area: image;
 
     @media (min-width: $width-m) {
       max-height: 448px;
@@ -24,9 +22,9 @@
   }
 
   &-slide {
+    grid-area: image;
     min-height: 344px;
     min-width: 320px;
-  
     border-radius: 15px;
     list-style-type: none;
     object-fit: cover;
@@ -45,13 +43,11 @@
   }
 
   &-pagination-list {
-    grid-area: pagination;
-    // width: 100%;
-    max-width: 310px;
     @include flex(center, flex-start, row);
     flex-wrap: wrap;
     list-style-type: none;
     min-height: 152px;
+    max-width: 305px;
 
     @media (min-width: $width-m) {
       max-width: 1200px;
@@ -61,7 +57,7 @@
   }
 
   &-pagination-bullet{
-    margin: 0 18px 0 0;
+    margin: 0 18px 0 0  !important;
     width: auto;
     height: auto;
     opacity: 100%;
@@ -72,7 +68,6 @@
     font-size: 14px;
     line-height: 120%;
     color: $primary_color_text;
-
 
     @media (min-width: $width-m) {
       font-size: 20px;
@@ -86,6 +81,7 @@
   }
 
   &-pagination-bullet-active {
+    margin: 0 18px 0 0 !important;
     font-family: $main-font;
     font-style: normal;
     font-weight: 500;
@@ -98,6 +94,10 @@
       font-size: 20px;
     }
 
+    &:last-child {
+      margin: 0;
+    }
+
   }
 
   &-nav-buttons {
@@ -107,8 +107,8 @@
   }
 
   &-infoblock {
-    // align-self: flex-start;
-    margin: 0;
+    align-self: flex-start;
+    margin: 54px 0 0 0;
     min-height: 117px;
     @include flex(flex-start, space-between, column);
     margin-bottom: 27px;
@@ -146,6 +146,7 @@
     }
 
     @media (min-width: $width-m) {
+      margin: 0;
       min-height: 136px;
       max-width: 472px;
     }
@@ -156,4 +157,19 @@
     max-width: 788px;
   }
 
+}
+
+.slider-wrapper {
+
+  display: grid;
+  grid-template-areas:   'textinfo'
+  'image';
+
+
+  @media (min-width: $width-m) {
+    margin: 104px 0 0 0;
+    column-gap: 52px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 'image textinfo';
+  }
 }
