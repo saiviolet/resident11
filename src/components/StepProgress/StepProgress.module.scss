@@ -1,0 +1,49 @@
+@import 'mixin.scss';
+@import 'variables.scss';
+
+.stepList {
+  margin: 0;
+  width: 100%;
+  max-width: 974px;
+  list-style-type: none;
+  display: flex;
+  min-height: 63px;
+}
+
+.step {
+  @include flex(center, center, column);
+  margin: 0;
+  position: relative;
+  width: 8.33%;
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 8px;
+  line-height: 10px;
+  color: $primary_color_text;
+
+
+  &::before {
+    display: block;
+    content: '1';
+    width: 12px;
+    height: 12px;
+    background-color: $color_grey;
+    border-radius: 50%;
+  }
+}
+
+.step_type_main {
+
+  &::before {
+    display: block;
+    content: '1';
+    line-height: 38px;
+    text-align: center;
+    width: 38px;
+    height: 38px;
+    background-color: $color_grey;
+    border-radius: 50%;
+  }
+
+}
