@@ -8,17 +8,25 @@ function StepProgress() {
     <>
     <ul className={style.stepList}>
     <li className={style.step + ' ' + style.step_type_main}></li>
-      <li className={style.step}>Геология</li>
-      <li className={style.step}>Геодезия</li>
-      <li className={style.step}>Дендрология</li>
+      <li step="Геология"className={style.step}></li>
+      <li step="Геодезия" className={style.step}></li>
+      <li step="Дендрология" className={style.step}></li>
       <li className={style.step + ' ' + style.step_type_main}></li>
-      <li className={style.step}>Проектирование коммуникаций</li>
-      <li className={style.step}>Проектирование дорог</li>
+      <li step="Проектирование коммуникаций" className={style.step}></li>
+      <li step="Проектирование дорог" className={style.step}></li>
       <li className={style.step + ' ' + style.step_type_main}></li>
-      <li className={style.step}>Подготовка участков</li>
-      <li className={style.step}>Строительство коммуникаций</li>
+      <li step="Подготовка участков" className={style.step}></li>
+      <li step="Строительство коммуникаций" className={style.step}></li>
+      <li step="Строительство дорог" className={style.step}></li>
       <li className={style.step + ' ' + style.step_type_main}></li>
     </ul>
+    {/* <ul className={style.stepList}>
+      <li className={style.stepList__step}>
+        <div className={style.stepList__round}></div>
+        <span className={style.stepList__name}></span>
+      </li>
+      
+    </ul> */}
     </>
   )
 }
