@@ -1,0 +1,157 @@
+@import 'variables.scss';
+@import 'mixin.scss';
+@import 'main.scss';
+
+.header {
+  @include flex(center, space-between, row);
+  height: 100%;
+  min-height: 113px;
+  width: 100%;
+
+  &__logo {
+    height: 66px;
+    width: 75.14834594726562px;
+    background-image: url(../../images/logo.svg);
+  }
+
+  &__icons {
+    @include flex(center, space-between, row);
+    margin: 0;
+    padding: 0;
+    min-width: 70px;
+    list-style-type: none;
+    @media (min-width: $width-m) {
+      justify-content: flex-end;
+    }
+
+  }
+
+  &__desktop-icons {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    min-width: 62.23px;
+
+    @media (min-width: $width-m) {
+      @include flex(center, space-between, row);
+    }
+  }
+
+  @media (min-width: $width-m) {
+    min-height: 148px;
+  }
+
+}
+
+.navbar {
+  height: 100vh;
+  @include flex(flex-start, flex-start, column);
+  overflow: hidden;
+  z-index: 10000;
+
+  ul {
+    @include flex(baseline, flex-start, column);
+
+    width: 100%;
+    list-style-type: none;
+  }
+
+  li {
+    margin: 16px 0 0 0;
+  }
+
+  li:first-child{
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 90%;
+    color: $primary_color_text;
+    font-family: $main-font;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  &__menu-icon {
+    width: 100%;
+    @include flex(center, flex-start, row);
+    margin-top: 62px;
+
+      div {
+        margin-right: 24px;
+      }
+      div:last-child {
+        margin-right: 0;
+      }
+
+      @media (min-width: $width-m) {
+        display: none;
+        margin-top: 0;
+      }
+  }
+
+  &__menu-title {
+    margin-top: 24px;
+    max-width: 160px;
+
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+
+    @media (min-width: $width-m) {
+      display: none;
+    }
+  }
+
+  &__menu-subtitle {
+    margin-top: 8px;
+
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+
+    @media (min-width: $width-m) {
+      display: none;
+    }
+  }
+
+  @media (min-width: $width-m) {
+
+    position: sticky;
+    top: 0;
+    
+    max-height: 52px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border: transparent;
+    border-top: 1px solid $color_grey;
+    border-bottom: 1px solid $color_grey;
+
+    ul {
+      @include flex(center, center, row);
+    }
+
+    li {
+      margin: 0 60px 0 0;
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+
+    li:first-child{
+      margin-right: 60px;
+    }
+
+  }
+
+}

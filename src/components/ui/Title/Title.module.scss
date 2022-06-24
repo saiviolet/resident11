@@ -1,0 +1,20 @@
+@import 'mixin.scss';
+@import 'variables.scss';
+
+.titleMain {
+  @include title(main);
+  text-align: center;
+  
+  @media (min-width: $width-m) {
+    text-align: start;
+  }
+}
+
+.title {
+  @include title(secondary);
+  text-align: center;
+
+  @media (min-width: $width-m) {
+    text-align: start;
+  }
+}

@@ -1,0 +1,62 @@
+@import 'mixin.scss';
+@import 'variables.scss';
+
+.history {
+  min-height: 1028px;
+  @include flex(flex-start, center, column);
+
+  &__subtitle {
+    margin: 19px 0 29px 0;
+
+    @media (min-width: $width-m) {
+      margin: 33px 0 83px 0;
+    }
+
+  }
+
+  &__table {
+    display: grid;
+    list-style-type: none;
+    grid-template-areas: '.'
+    '.'
+    '.'
+    'button';
+    grid-template-columns: 1fr;
+    grid-row-gap: 14px;
+    grid-template-rows: repeat(4, minmax(104px, max-content));
+
+    @media (min-width: $width-m) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, minmax(119px, max-content));
+      grid-auto-rows: minmax(auto, 472px);
+      grid-column-gap: 48px;
+      grid-template-areas: '. . .'
+      '. . button';
+    }
+  }
+
+  &__tableItem {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+    color: $primary_color_text;
+
+    @media (min-width: $width-m) {
+      font-size: 16px;
+    }
+
+  }
+
+  &__button {
+    margin: 0;
+    grid-area: button;
+    justify-self: start;
+    align-self: end;
+  }
+
+  @media (min-width: $width-m) {
+    min-height: 912px;
+  }
+}

@@ -1,0 +1,50 @@
+@import 'mixin.scss';
+@import 'variables.scss';
+
+.origins {
+  min-height: 447px;
+  width: 100%;
+  @include flex(flex-start, center, column);
+
+  background-image: url(../../images/origins.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+
+  &__subtitle {
+    margin-top: 59px;
+    max-width: 316px;
+    background-color: transparent;
+
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    color: $primary_color;
+
+    @media (min-width: $width-m) {
+      align-self: flex-end;
+      font-size: 22px;
+      margin: 69px 304px 0 0;
+      max-width: 636px;
+    }
+  }
+
+  &__title {
+    margin: 0 auto;
+    text-align: left;
+    width: 100%;
+    max-width: 316px;
+    background-color: transparent;
+    color: $primary_color;
+
+    @media (min-width: $width-m) {
+      min-width: 1210px;
+    }
+  }
+
+  @media (min-width: $width-m) {
+    min-height: 632px;
+  }
+}

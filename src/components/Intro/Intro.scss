@@ -1,0 +1,63 @@
+@import 'variables.scss';
+@import 'mixin.scss';
+@import 'main.scss';
+
+.intro {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  min-height: 731px;
+  @include flex(center, center, column);
+
+  @media (min-width: $width-m) {
+    min-height: 701px;
+    flex-direction: row;
+  }
+
+  &__video {
+    @include flex(center, center, column);
+
+    @media (min-width: $width-m) {
+      margin-right: 76px; 
+    }
+
+  }
+
+  &__mask-image {
+    clip-path: url(#intro_mask);
+    width: 200px;
+    height: 190px;
+    object-fit: cover;
+    object-position: center center;
+
+    @media (min-width: $width-m) {
+      height: 420px;
+      width: 440px;
+      clip-path: url(#intro_mask_big);
+    }
+
+  }
+
+  &__info-block {
+    margin-top: 66px;
+    @include flex(center, space-between, column);
+    width: 100%;
+    min-height: 248px;
+
+    @media (min-width: $width-m) {
+      flex-basis: 674px;
+      align-items: flex-start;
+    }
+
+  }
+
+  &__info-block-text {
+    color: $primary_color_text;
+    font-family: $main-font;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: center;
+  }
+  
+}

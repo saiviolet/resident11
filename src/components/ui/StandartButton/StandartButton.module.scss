@@ -1,0 +1,17 @@
+@import 'variables.scss';
+@import 'mixin.scss';
+
+.button {
+  @include button;
+  border-color: $primary_color_text;
+  // min-height: 63px;
+  height: 63px;
+  @include button-text;
+  color: $primary_color_text;
+  text-decoration: none;
+  transition: background 0.5s ease, color 0.3s ease;
+
+  &:hover {
+    @include animateButton;
+  }
+}
