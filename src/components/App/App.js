@@ -11,8 +11,7 @@ import House from '../House/House';
 import Origins from '../Origins/Origins';
 import History from '../History/History';
 import Infrastructure from '../Infrastructure/Infrastructure';
-import Slider from '../ui/Slider/Slider';
-import StepProgress from '../StepProgress/StepProgress';
+import Stages from '../Stages/Stages';
 function App() {
   return (
     <>
@@ -26,7 +25,7 @@ function App() {
     <Origins />
     <History />
     <Infrastructure />
-    <StepProgress />
+    <Stages />
     </>
   );
 }

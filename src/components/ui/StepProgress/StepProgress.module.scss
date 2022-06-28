@@ -1,0 +1,181 @@
+@import 'mixin.scss';
+@import 'variables.scss';
+
+.stepList {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  max-width: 974px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 180px;
+  counter-reset: step;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #C4C4C4;
+  }
+
+  &.active::after {
+    background: linear-gradient(to right, $brand_color 53%, #C4C4C4 53%);
+  }
+}
+
+.step {
+  margin: 0;
+  position: relative;
+  width: 8.33%;
+  height: 12px;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    // right: 100%;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: $color_grey;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &.active::before {
+    background-color: $brand_color;
+  }
+
+  &::after {
+    position: absolute;
+    content: attr(step);
+    width: 88px;
+    bottom: 19px;
+    left: -50%;
+    // left: -21.7px;
+    text-align: center;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 8px;
+    line-height: 10px;
+    color: $primary_color_text;
+  }
+
+  &:nth-child(2n-1)::after {
+    bottom: -27px;
+  }
+
+  &:first-child:after {
+    bottom: -19px;
+   }
+
+}
+
+.step_type_main {
+  height: 38px;
+
+  &::before {
+    display: block;
+    content: counter(step);
+    counter-increment: step;
+
+    line-height: 38px;
+    width: 38px;
+    height: 38px;
+
+    background-color: $color_grey;
+    border-radius: 50%;
+
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: $primary_color;
+  }
+
+  &.active::before {
+    background-color: $brand_color;
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    content: attr(step);
+
+    top: 58px;
+    left: 0;
+    text-align: left;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: $primary_color_text;
+  }
+
+  &:last-of-type {
+    width: 38px;
+  }
+
+}
+
+.percent {
+  display: block;
+  position: absolute;
+
+  top: 10px;
+  left: 53%;
+  //-35px -  половина ширины элемента
+  transform: translateX(-35px);
+  width: 69px;
+  height: 32px;
+  border-radius: 5px;
+  background-color: $brand_color;
+
+  &::after {
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    content: attr(perc);
+    font-family: $main-font;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: $primary_color;
+  }
+
+  &::before {
+    position: absolute;
+    bottom: -22px;
+    left: 22px;
+    content: '';
+    border: 12px solid transparent; 
+    border-top: 12px solid $brand_color;
+  }
+}
+
+.data {
+  position: absolute;
+  display: block;
+  width: 70px;
+  top: 30px;
+  left: 0;
+  transform: translateX(-10px);
+
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: $color_grey;
+
+  &__right {
+    transform: translateX(-50px);
+    left: 100%;
+  }
+}
