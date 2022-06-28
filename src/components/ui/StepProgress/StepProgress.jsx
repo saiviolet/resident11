@@ -3,10 +3,14 @@ import style from './StepProgress.module.scss';
 
 function StepProgress() {
   const percent = '53%';
+  const dataStart = '01.06.2021';
+  const dataFinish = '01.02.2023';
   return (
     <>
     <ul className={`${style.stepList} ${style.active}`} perc={percent}>
-      <span perc={percent}className={style.percent}></span>
+      <span perc={percent} className={style.percent}></span>
+      <span className={style.data}>{dataStart}</span>
+      <span className={`${style.data} ${style.data__right}`}>{dataFinish}</span>
     <li step="Подготовительные работы" className={`${style.step} ${style.step_type_main} ${style.active}`}></li>
       <li step="Геология"className={`${style.step} ${style.active}`}></li>
       <li step="Геодезия" className={`${style.step} ${style.active}`}></li>

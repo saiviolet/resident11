@@ -3,14 +3,14 @@
 
 .stepList {
   position: relative;
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
   max-width: 974px;
   list-style-type: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 63px;
+  min-height: 180px;
   counter-reset: step;
 
   &::after {
@@ -128,7 +128,7 @@
   display: block;
   position: absolute;
 
-  top: -50px;
+  top: 10px;
   left: 53%;
   //-35px -  половина ширины элемента
   transform: translateX(-35px);
@@ -156,5 +156,26 @@
     content: '';
     border: 12px solid transparent; 
     border-top: 12px solid $brand_color;
+  }
+}
+
+.data {
+  position: absolute;
+  display: block;
+  width: 70px;
+  top: 30px;
+  left: 0;
+  transform: translateX(-10px);
+
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: $color_grey;
+
+  &__right {
+    transform: translateX(-50px);
+    left: 100%;
   }
 }
